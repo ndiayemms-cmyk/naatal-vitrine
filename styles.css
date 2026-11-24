@@ -676,7 +676,8 @@ html:has(.decouvrir) { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .d-marque {
   flex: none;
 }
-@media (max-width: 479px) {
+/* En em : avec le texte agrandi du téléphone, l'en-tête compact prend le relais plus tôt. */
+@media (max-width: 30em) {
   .d-entete .d-wrap {
     gap: 8px;
   }
@@ -685,10 +686,14 @@ html:has(.decouvrir) { scroll-behavior: smooth; scroll-padding-top: 80px; }
   }
   .d-nav-droite {
     gap: 4px;
+    min-width: 0;
   }
   .d-connexion {
-    padding: 0 12px;
-    letter-spacing: 0.08em;
+    padding: 0 10px;
+    letter-spacing: 0.06em;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.15;
   }
 }
 

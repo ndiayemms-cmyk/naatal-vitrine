@@ -121,8 +121,9 @@
 .pt-picto { display: inline-flex; width: 20px; height: 20px; }
 .pt-picto svg { width: 100%; height: 100%; }
 
-.pt-outils { display: grid; gap: 10px; margin-bottom: 10px; }
-.pt-recherche { display: flex; gap: 8px; }
+.pt-outils { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin-bottom: 10px; }
+.pt-recherche { display: flex; gap: 8px; min-width: 0; }
+.pt-recherche input { width: 0; }
 .pt-recherche input,
 .pt-champ input {
   flex: 1;
@@ -478,7 +479,7 @@
 }
 
 @media (min-width: 560px) {
-  .pt-outils { grid-template-columns: auto 1fr; }
+  .pt-outils { grid-template-columns: auto minmax(0, 1fr); }
   .pt-partage-boutons { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
   .pt-point { grid-template-columns: 1fr 1fr; }
   .pt-liens-app { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
