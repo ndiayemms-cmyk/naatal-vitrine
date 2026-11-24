@@ -1,5 +1,5 @@
-import { CONFIG } from "./config.js?v=mwvas9ex";
-import { formaterCoordonnees, formaterHorodatage } from "./geo.js?v=mwvas9ex";
+import { CONFIG } from "./config.js?v=mwvcvpu9";
+import { formaterCoordonnees, formaterHorodatage } from "./geo.js?v=mwvcvpu9";
 
 const COTE_MAX_PX = 1600;
 const QUALITE_JPEG = 0.8;

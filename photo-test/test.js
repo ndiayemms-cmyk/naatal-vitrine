@@ -1,11 +1,11 @@
-import { badgeVerification } from "./badge.js?v=mwvas9ex";
-import { carteResultat, SelecteurTerrain } from "./carte.js?v=mwvas9ex";
-import { CONFIG } from "./config.js?v=mwvas9ex";
-import { el } from "./dom.js?v=mwvas9ex";
-import { chercherLieu, formaterCoordonnees, formaterMoment, villeDe } from "./geo.js?v=mwvas9ex";
-import { panneauPartage } from "./partage.js?v=mwvas9ex";
-import { appliquerCharte, liensApplication } from "./charte.js?v=mwvas9ex";
-import { adressesPhotos, BRANCHEE, creerDemande, lireSuivi, suivreArrivees } from "./supabase.js?v=mwvas9ex";
+import { badgeVerification } from "./badge.js?v=mwvcvpu9";
+import { carteResultat, SelecteurTerrain } from "./carte.js?v=mwvcvpu9";
+import { CONFIG } from "./config.js?v=mwvcvpu9";
+import { el } from "./dom.js?v=mwvcvpu9";
+import { chercherLieu, formaterCoordonnees, formaterMoment, villeDe } from "./geo.js?v=mwvcvpu9";
+import { panneauPartage } from "./partage.js?v=mwvcvpu9";
+import { appliquerCharte, liensApplication } from "./charte.js?v=mwvcvpu9";
+import { adressesPhotos, BRANCHEE, creerDemande, lireSuivi, suivreArrivees } from "./supabase.js?v=mwvcvpu9";
 
 const CLE_SUIVI = "naatal-photo-test";
 const PHOTOS_MAX = 3;
@@ -226,6 +226,8 @@ async function rafraichir() {
 async function afficherPhotos() {
   const { photos, rayon_m: rayon } = etat.demande;
   const adresses = await adressesPhotos(photos.map((p) => p.storage_path));
+  // Leaflet cadre la carte selon la taille de son conteneur : l'étape doit être visible avant.
+  if (photos.length > 0 && document.querySelector('.pt-etape[data-etape="4"]').hidden) montrerEtape(4);
   const fil = $("pt-fil");
   fil.replaceChildren();
   photos.forEach((photo, index) => {
@@ -255,7 +257,6 @@ async function afficherPhotos() {
     : "Les 3 photos prévues pour ce lien sont arrivées.";
   $("pt-code").textContent = etat.demande.claim_code;
   $("pt-code-expiration").textContent = formaterMoment(new Date(etat.demande.expires_at));
-  if (photos.length > 0 && document.querySelector('.pt-etape[data-etape="4"]').hidden) montrerEtape(4);
 }
 
 function montrerExpiration() {

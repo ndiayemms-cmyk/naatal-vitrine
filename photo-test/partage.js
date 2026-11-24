@@ -1,4 +1,4 @@
-import { el } from "./dom.js?v=mwvas9ex";
+import { el } from "./dom.js?v=mwvcvpu9";
 
 const PICTOS = {
   whatsapp:
