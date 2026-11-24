@@ -1,4 +1,4 @@
-import { CONFIG } from "./config.js";
+import { CONFIG } from "./config.js?v=mwvas9ex";
 
 // Nominatim n'accepte qu'une requête par seconde et interdit la recherche à chaque frappe : les appels sont
 // mis en file, espacés, et leurs réponses gardées pour la session. Le navigateur ne laisse pas choisir
@@ -56,13 +56,18 @@ async function nominatim(chemin, parametres) {
   return reponse.json();
 }
 
+// OpenStreetMap nomme souvent les communes du Sénégal par leur échelon administratif
+// (« Département de Guédiawaye », « Commune de Grand Yoff ») : seul le nom du lieu est gardé.
+const ECHELON = /^(département|commune d'arrondissement|communauté rurale|commune|arrondissement|région|quartier)\s+(de\s+la\s+|de\s+l'|de\s+|du\s+|des\s+|d')/i;
+
 export async function villeDe(lat, lng) {
-  const cle = `r:${lat.toFixed(3)},${lng.toFixed(3)}`;
+  const cle = `ville:${lat.toFixed(3)},${lng.toFixed(3)}`;
   const connue = lireCache(cle);
   if (connue !== undefined) return connue;
   const reponse = await nominatim("/reverse", { lat, lon: lng, zoom: 14 });
   const a = reponse.address ?? {};
-  const ville = a.city || a.town || a.village || a.suburb || a.municipality || a.county || a.state || null;
+  const brut = a.city || a.town || a.village || a.suburb || a.city_district || a.municipality || a.county || a.state;
+  const ville = brut ? brut.replace(ECHELON, "") : null;
   ecrireCache(cle, ville);
   return ville;
 }
