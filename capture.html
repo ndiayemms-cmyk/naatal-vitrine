@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr" class="__variable_b888ad">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Naatal · Photo demandée</title>
+<meta name="description" content="Un proche te demande une photo de son terrain, prise avec la caméra Naatal.">
+<meta name="author" content="Mamadou Makhtar Sassoum NDIAYE ECAI">
+<meta name="theme-color" content="#072A35">
+<script>
+try { var t = localStorage.getItem("naatal-theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="photo-test/photo-test.css">
+</head>
+<body>
+<div class="__variable_4a860e"><div class="decouvrir teinte-or pt-capture">
+<header class="pt-capture-entete"><a class="d-marque" href="index.html" target="_blank" rel="noopener" aria-label="Naatal, page d'accueil"><svg class="marque" width="34" height="34" viewBox="13 -8 390 400" role="img" aria-label="Naatal"><defs><linearGradient id="decouvrir-marque-or" x1="0" y1="20" x2="0" y2="370" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFC24A"></stop><stop offset=".55" stop-color="#F8A61E"></stop><stop offset="1" stop-color="#EE920B"></stop></linearGradient><linearGradient id="decouvrir-marque-argent" x1="0" y1="240" x2="0" y2="310" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C3CAD1"></stop><stop offset="1" stop-color="#8C98A3"></stop></linearGradient><filter id="decouvrir-marque-biseau" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="5" result="flou"></feGaussianBlur><feSpecularLighting in="flou" surfaceScale="5" specularConstant="1" specularExponent="18" lighting-color="#FFF6DD" result="reflet"><feDistantLight azimuth="250" elevation="48"></feDistantLight></feSpecularLighting><feComposite in="reflet" in2="SourceAlpha" operator="in" result="refletDedans"></feComposite><feDiffuseLighting in="flou" surfaceScale="5" diffuseConstant="1.1" lighting-color="#FFFFFF" result="ombrage"><feDistantLight azimuth="250" elevation="55"></feDistantLight></feDiffuseLighting><feComposite in="SourceGraphic" in2="ombrage" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="modele"></feComposite><feComposite in="modele" in2="SourceAlpha" operator="in" result="modeleDedans"></feComposite><feComposite in="modeleDedans" in2="refletDedans" operator="arithmetic" k1="0" k2="1" k3="0.38" k4="0"></feComposite></filter><filter id="decouvrir-marque-ombre" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000000" flood-opacity="0.38"></feDropShadow></filter></defs><g filter="url(#decouvrir-marque-ombre)"><g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#decouvrir-marque-biseau)"><path d="M34 178 209 40l175 138" stroke="url(#decouvrir-marque-or)" stroke-width="38"></path><path d="M92 152v194h234V152" stroke="url(#decouvrir-marque-or)" stroke-width="38"></path><path d="M92 218l38-36 38 34 40-34 38 34 40-34 38 34" stroke="url(#decouvrir-marque-or)" stroke-width="30"></path><path d="m112 282 36-34 36 32 38-34 36 32 40-38" stroke="url(#decouvrir-marque-argent)" stroke-width="30"></path></g></g></svg><svg class="logotype" height="15" width="90.6" viewBox="0 0 604 100" role="img" aria-label="Naatal"><g fill="currentColor"><path d="M0 100V0h27l42 60V0h28v100H70L28 40v60z"></path><path transform="translate(101 0)" d="M0 100 42 0h30l42 100H84L57 33 30 100z"></path><path transform="translate(209 0)" d="M0 100 42 0h30l42 100H84L57 33 30 100z"></path><path transform="translate(405 0)" d="M0 100 42 0h30l42 100H84L57 33 30 100z"></path><path transform="translate(317 0)" d="M0 0h90v24H59v76H31V24H0z"></path><path transform="translate(526 0)" d="M0 0h28v76h50v24H0z"></path></g><g fill="var(--brand-orange)"><path transform="translate(101 0)" d="M42 90a15 15 0 0 1 30 0z"></path><path transform="translate(209 0)" d="M42 90a15 15 0 0 1 30 0z"></path><path transform="translate(405 0)" d="M42 90a15 15 0 0 1 30 0z"></path></g></svg></a></header>
+<main id="contenu">
+
+<section id="c-chargement" class="pt-ecran pt-ecran-centre" aria-live="polite">
+<div class="pt-radar" aria-hidden="true"><span></span><span></span><span></span></div>
+<h1 tabindex="-1">Ouverture du lien…</h1>
+</section>
+
+<section id="c-accueil" class="pt-ecran" hidden>
+<h1 tabindex="-1"><span id="c-demandeur">Ton proche</span> te demande une photo de son terrain.</h1>
+<p>La photo part directement chez lui, avec l'endroit et l'heure où elle a été prise. Rien à installer.</p>
+<div class="pt-consentement">
+<p>Naatal utilise ta position uniquement pour vérifier où la photo est prise. La photo est supprimée 24 heures après la création du lien.</p>
+<p>Ton téléphone va te demander l'accès à la caméra et à la position : accepte les deux.</p>
+</div>
+<button type="button" id="c-ouvrir" class="pt-bouton pt-bouton-principal">Ouvrir la caméra Naatal</button>
+</section>
+
+<section id="c-camera" class="pt-ecran pt-camera" aria-label="Caméra Naatal" hidden>
+<video id="c-video" playsinline muted autoplay></video>
+<div class="pt-viseur" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div id="c-flash" class="pt-flash" aria-hidden="true"></div>
+<div class="pt-surimpression" aria-live="polite">
+<img data-logo alt="" width="28" height="28">
+<div>
+<p id="c-lieu" class="pt-surimpression-lieu">Recherche du signal GPS…</p>
+<p id="c-coordonnees" class="pt-surimpression-coords"></p>
+<p id="c-heure" class="pt-surimpression-heure"></p>
+</div>
+</div>
+<div class="pt-commandes">
+<button type="button" id="c-fermer" class="pt-rond" aria-label="Fermer la caméra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<button type="button" id="c-declencheur" class="pt-declencheur" aria-label="Prendre la photo" disabled><span></span></button>
+<button type="button" id="c-changer" class="pt-rond" aria-label="Changer de caméra" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><path d="M9.5 12.5a3 3 0 0 1 5-1.5l.8.8M14.5 15a3 3 0 0 1-5 .5l-.8-.8"/></svg></button>
+</div>
+</section>
+
+<section id="c-secours" class="pt-ecran" hidden>
+<h1 tabindex="-1">Prends la photo avec ton téléphone</h1>
+<p id="c-secours-raison">La caméra Naatal n'est pas disponible dans ce navigateur. Tu peux utiliser l'appareil photo du téléphone.</p>
+<p class="pt-aide">Prends la photo maintenant, sur place : ta position est lue au moment où tu valides. La photo portera la mention « hors caméra Naatal ».</p>
+<label class="pt-bouton pt-bouton-principal pt-fichier">Ouvrir l'appareil photo<input id="c-fichier" type="file" accept="image/*" capture="environment"></label>
+<p id="c-secours-etat" class="pt-aide" role="status"></p>
+</section>
+
+<section id="c-apercu" class="pt-ecran" hidden>
+<h1 tabindex="-1">Ta photo</h1>
+<img id="c-apercu-image" class="pt-apercu" alt="Aperçu de la photo avec son bandeau horodaté Naatal">
+<p id="c-apercu-precision" class="pt-aide"></p>
+<div class="pt-boutons">
+<button type="button" id="c-envoyer" class="pt-bouton pt-bouton-principal">Envoyer</button>
+<button type="button" id="c-reprendre" class="pt-bouton pt-bouton-second">Reprendre</button>
+</div>
+<p id="c-envoi-etat" class="pt-aide" role="status"></p>
+</section>
+
+<section id="c-envoyee" class="pt-ecran" hidden>
+<div class="pt-coche" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<h1 tabindex="-1">Photo envoyée</h1>
+<p>Elle vient d'arriver chez ton proche, avec l'endroit et l'heure où tu l'as prise.</p>
+<button type="button" id="c-autre" class="pt-bouton pt-bouton-second">Prendre une autre photo</button>
+<aside class="pt-cta">
+<p class="pt-cta-titre">Toi aussi tu construis au pays ? Suis ton chantier à distance avec Naatal.</p>
+<div id="c-liens-app" class="pt-liens-app"></div>
+</aside>
+</section>
+
+<section id="c-erreur" class="pt-ecran" hidden>
+<h1 id="c-erreur-titre" tabindex="-1"></h1>
+<p id="c-erreur-texte"></p>
+<ul id="c-erreur-aide" class="pt-aide-liste" hidden></ul>
+</section>
+
+<p class="pt-mentions">Page test : les photos sont supprimées 24 heures après la création du lien. La position n'est utilisée que pour la vérification. <a href="photo-test-confidentialite.html">Politique de confidentialité de la page test</a></p>
+</main>
+</div></div>
+<script type="module" src="photo-test/capture.js"></script>
+</body>
+</html>
