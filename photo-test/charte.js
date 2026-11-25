@@ -1,5 +1,5 @@
-import { CONFIG } from "./config.js?v=mwvv6eso";
-import { el } from "./dom.js?v=mwvv6eso";
+import { CONFIG } from "./config.js?v=mwwrp50p";
+import { el } from "./dom.js?v=mwwrp50p";
 
 export function appliquerCharte() {
   const racine = document.documentElement.style;
@@ -16,7 +16,12 @@ export function appliquerCharte() {
 // Liens vers l'application : l'inscription Naatal toujours, les magasins d'applications seulement si
 // leurs adresses sont renseignées dans la configuration.
 export function liensApplication(conteneur, lireCode) {
-  const inscription = el("a", { classe: "pt-bouton pt-bouton-principal", href: CONFIG.lienApp }, "Ouvrir Naatal");
+  const inscription = el(
+    "a",
+    { classe: "pt-bouton pt-bouton-principal", href: CONFIG.lienApp },
+    el("img", { classe: "pt-bouton-logo", src: CONFIG.logo, alt: "", width: "28", height: "28" }),
+    "Commencer avec Naatal",
+  );
   inscription.addEventListener("click", () => {
     const code = lireCode?.();
     if (!code) return;

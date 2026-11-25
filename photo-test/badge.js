@@ -1,5 +1,5 @@
-import { el } from "./dom.js?v=mwvv6eso";
-import { formaterDistance, formaterMoment } from "./geo.js?v=mwvv6eso";
+import { el } from "./dom.js?v=mwwrp50p";
+import { formaterDistance, formaterMoment } from "./geo.js?v=mwwrp50p";
 
 const PRECISION_FAIBLE_M = 100;
 const DERIVE_SIGNALEE_S = 120;
