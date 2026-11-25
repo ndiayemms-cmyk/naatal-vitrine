@@ -1,8 +1,8 @@
-import { CameraNaatal, composerPhoto } from "./camera.js?v=mwwruvvp";
-import { appliquerCharte, liensApplication } from "./charte.js?v=mwwruvvp";
-import { el } from "./dom.js?v=mwwruvvp";
-import { formaterCoordonnees, formaterHorodatage, villeDe } from "./geo.js?v=mwwruvvp";
-import { BRANCHEE, envoyerPhoto, lireCapture } from "./supabase.js?v=mwwruvvp";
+import { CameraNaatal, composerPhoto } from "./camera.js?v=mwwrwr95";
+import { appliquerCharte, liensApplication } from "./charte.js?v=mwwrwr95";
+import { el } from "./dom.js?v=mwwrwr95";
+import { formaterCoordonnees, formaterHorodatage, villeDe } from "./geo.js?v=mwwrwr95";
+import { BRANCHEE, envoyerPhoto, lireCapture } from "./supabase.js?v=mwwrwr95";
 
 const PRECISION_FAIBLE_M = 100;
 const DEPLACEMENT_NOUVELLE_VILLE_M = 150;
