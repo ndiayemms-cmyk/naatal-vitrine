@@ -1,5 +1,5 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm";
-import { CONFIG } from "./config.js?v=mwwrz6e2";
+import { CONFIG } from "./config.js?v=mwws1t90";
 
 export const BRANCHEE = Boolean(CONFIG.supabaseUrl && CONFIG.supabaseCleAnonyme);
 
