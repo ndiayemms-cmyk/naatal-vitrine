@@ -755,6 +755,10 @@ html:has(.decouvrir) { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .d-films-image.vertical img {
   object-fit: contain;
 }
-.d-films-lien { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; color: var(--eclat); font-weight: 700; text-underline-offset: 4px; }
+.d-films-lien { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 26px; border: 1px solid rgba(var(--eclat-rgb),.55); border-radius: 999px; background: rgba(var(--eclat-rgb),.08); color: #f5f7fa; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; box-shadow: 0 8px 30px rgba(var(--eclat-fonce-rgb),.18); transition: background .15s, border-color .15s, transform .15s; }
+.d-films-lien::after { content: "→"; color: var(--eclat); font-size: 1rem; letter-spacing: 0; transition: transform .15s; }
+.d-films-lien:hover { background: rgba(var(--eclat-rgb),.16); border-color: var(--eclat); transform: translateY(-1px); }
+.d-films-lien:hover::after { transform: translateX(3px); }
+.d-films-lien:focus-visible { outline: 3px solid var(--eclat); outline-offset: 3px; }
 .d-films-lien[hidden] { display: none; }
 .d-films-suite { display: flex; justify-content: center; margin-top: 18px; }
