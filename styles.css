@@ -602,6 +602,13 @@ html:has(.decouvrir) { scroll-behavior: smooth; scroll-padding-top: 80px; }
   margin-left: auto;
   margin-right: auto;
 }
+/* Titre en plusieurs phrases : une phrase par ligne sur grand écran, retour naturel sur téléphone. */
+.d-hero-cas h1:has(.d-ligne) {
+  max-width: none;
+}
+.d-hero-cas h1 .d-ligne {
+  display: block;
+}
 .d-films-attente {
   display: grid;
   place-content: center;
@@ -642,28 +649,70 @@ html:has(.decouvrir) { scroll-behavior: smooth; scroll-padding-top: 80px; }
   font-size: clamp(1.25rem, 2.6vw, 1.75rem);
   color: var(--titre);
 }
+/* Grille régulière : toutes les cases ont la même largeur et, ligne par ligne, la même hauteur. */
 .d-cas-autres ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
   margin: 0;
-  padding: 0;
+  padding: 0 0 8px;
   list-style: none;
 }
+.d-cas-autres li {
+  display: flex;
+}
+/* Effet relief 3D : reflet en haut, ombre portée en dessous, la case se soulève au survol. */
 .d-cas-autres a {
+  flex: 1;
   display: grid;
-  gap: 2px;
+  align-content: start;
+  gap: 4px;
   min-height: 44px;
-  padding: 12px 18px;
+  padding: 16px 20px;
   border-radius: 14px;
   border: 1px solid var(--trait);
-  background: var(--carte);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 55%, rgba(0, 0, 0, 0.12)),
+    var(--carte);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.22),
+    0 4px 0 -1px rgba(0, 0, 0, 0.28),
+    0 10px 22px -8px rgba(0, 0, 0, 0.5);
   text-decoration: none;
   color: var(--encre);
-  transition: border-color 0.15s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
 }
-.d-cas-autres a:hover {
+.d-cas-autres a:hover,
+.d-cas-autres a:focus-visible {
   border-color: var(--pastille);
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.22),
+    0 7px 0 -1px rgba(0, 0, 0, 0.26),
+    0 18px 32px -10px rgba(0, 0, 0, 0.55);
+}
+.d-cas-autres a:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 1px 0 0 rgba(0, 0, 0, 0.28),
+    0 4px 10px -6px rgba(0, 0, 0, 0.5);
+}
+@media (prefers-reduced-motion: reduce) {
+  .d-cas-autres a {
+    transition: none;
+  }
+  .d-cas-autres a:hover,
+  .d-cas-autres a:focus-visible,
+  .d-cas-autres a:active {
+    transform: none;
+  }
 }
 .d-cas-autres strong {
   font-size: 0.9375rem;
@@ -706,3 +755,6 @@ html:has(.decouvrir) { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .d-films-image.vertical img {
   object-fit: contain;
 }
+.d-films-lien { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; color: var(--eclat); font-weight: 700; text-underline-offset: 4px; }
+.d-films-lien[hidden] { display: none; }
+.d-films-suite { display: flex; justify-content: center; margin-top: 18px; }

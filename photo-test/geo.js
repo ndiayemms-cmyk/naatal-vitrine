@@ -1,4 +1,4 @@
-import { CONFIG } from "./config.js?v=mwvdopzr";
+import { CONFIG } from "./config.js?v=mwveyz84";
 
 // Nominatim n'accepte qu'une requête par seconde et interdit la recherche à chaque frappe : les appels sont
 // mis en file, espacés, et leurs réponses gardées pour la session. Le navigateur ne laisse pas choisir

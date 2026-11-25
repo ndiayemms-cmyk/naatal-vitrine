@@ -86,6 +86,7 @@
   var onglets = cadre.querySelectorAll(".d-films-onglets button");
   var barreOnglets = cadre.querySelector(".d-films-onglets");
   var resume = cadre.querySelector(".d-films-resume");
+  var lienFilm = cadre.querySelector(".d-films-lien");
   var diapos = piste.querySelectorAll(".d-films-diapo:not(.d-films-gabarit)");
 
   var courant = 0;
@@ -181,6 +182,14 @@
       if (barre) barre.style.transform = "scaleX(0)";
     });
     resume.textContent = FILMS[courant].resume;
+    if (lienFilm) {
+      var lienCourant = FILMS[courant].lien;
+      lienFilm.hidden = !lienCourant;
+      if (lienCourant) {
+        lienFilm.textContent = lienCourant.texte;
+        lienFilm.setAttribute("href", lienCourant.adresse);
+      }
+    }
     var actif = onglets[courant];
     if (!premierRendu && actif) {
       barreOnglets.scrollTo({ left: actif.offsetLeft - (barreOnglets.clientWidth - actif.clientWidth) / 2, behavior: "smooth" });
