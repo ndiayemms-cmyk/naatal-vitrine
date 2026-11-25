@@ -1,11 +1,11 @@
-import { badgeVerification } from "./badge.js?v=mwvdigsg";
-import { carteResultat, SelecteurTerrain } from "./carte.js?v=mwvdigsg";
-import { CONFIG } from "./config.js?v=mwvdigsg";
-import { el } from "./dom.js?v=mwvdigsg";
-import { chercherLieu, formaterCoordonnees, formaterMoment, villeDe } from "./geo.js?v=mwvdigsg";
-import { panneauPartage } from "./partage.js?v=mwvdigsg";
-import { appliquerCharte, liensApplication } from "./charte.js?v=mwvdigsg";
-import { adressesPhotos, BRANCHEE, creerDemande, lireSuivi, suivreArrivees } from "./supabase.js?v=mwvdigsg";
+import { badgeVerification } from "./badge.js?v=mwvdopzr";
+import { carteResultat, SelecteurTerrain } from "./carte.js?v=mwvdopzr";
+import { CONFIG } from "./config.js?v=mwvdopzr";
+import { el } from "./dom.js?v=mwvdopzr";
+import { chercherLieu, formaterCoordonnees, formaterMoment, villeDe } from "./geo.js?v=mwvdopzr";
+import { panneauPartage } from "./partage.js?v=mwvdopzr";
+import { appliquerCharte, liensApplication } from "./charte.js?v=mwvdopzr";
+import { adressesPhotos, BRANCHEE, creerDemande, lireSuivi, suivreArrivees } from "./supabase.js?v=mwvdopzr";
 
 const CLE_SUIVI = "naatal-photo-test";
 const PHOTOS_MAX = 3;
