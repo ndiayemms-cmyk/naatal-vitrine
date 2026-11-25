@@ -1,5 +1,5 @@
-import { CONFIG } from "./config.js?v=mwvcvpu9";
-import { el } from "./dom.js?v=mwvcvpu9";
+import { CONFIG } from "./config.js?v=mwvdbvzr";
+import { el } from "./dom.js?v=mwvdbvzr";
 
 export function appliquerCharte() {
   const racine = document.documentElement.style;

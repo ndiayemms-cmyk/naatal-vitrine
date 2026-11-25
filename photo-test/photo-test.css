@@ -498,3 +498,5 @@
 .pt-texte h2 { margin: 28px 0 8px; font-size: 1.25rem; color: var(--titre); }
 .pt-texte h2:first-child { margin-top: 0; }
 .pt-texte p { margin: 0 0 12px; }
+
+.d-nav-centre a[aria-current="page"] { color: var(--eclat); }
