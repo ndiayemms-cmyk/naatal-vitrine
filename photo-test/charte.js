@@ -1,5 +1,5 @@
-import { CONFIG } from "./config.js?v=mwws4u6y";
-import { el } from "./dom.js?v=mwws4u6y";
+import { CONFIG } from "./config.js?v=mwwsfzi4";
+import { el } from "./dom.js?v=mwwsfzi4";
 
 export function appliquerCharte() {
   const racine = document.documentElement.style;
@@ -13,26 +13,12 @@ export function appliquerCharte() {
   }
 }
 
-// La maison du logo, d'une seule couleur (celle du texte du bouton) pour rester lisible sur le fond doré.
-function maison() {
-  const icone = document.createElement("span");
-  icone.className = "pt-bouton-maison";
-  icone.setAttribute("aria-hidden", "true");
-  icone.innerHTML =
-    '<svg viewBox="13 -8 390 400"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">' +
-    '<path d="M34 178 209 40l175 138" stroke-width="38"/><path d="M92 152v194h234V152" stroke-width="38"/>' +
-    '<path d="M92 218l38-36 38 34 40-34 38 34 40-34 38 34" stroke-width="30"/>' +
-    '<path d="m112 282 36-34 36 32 38-34 36 32 40-38" stroke-width="30" opacity=".55"/></g></svg>';
-  return icone;
-}
-
 // Liens vers l'application : l'inscription Naatal toujours, les magasins d'applications seulement si
 // leurs adresses sont renseignées dans la configuration.
 export function liensApplication(conteneur, lireCode) {
   const inscription = el(
     "a",
-    { classe: "pt-bouton pt-bouton-principal pt-bouton-naatal", href: CONFIG.lienApp },
-    maison(),
+    { classe: "pt-bouton pt-bouton-principal", href: CONFIG.lienApp },
     "Commencer avec Naatal",
   );
   inscription.addEventListener("click", () => {
